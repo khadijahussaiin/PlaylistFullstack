@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+</head>
+<body>
+<h1>Playlist</h1>
+
+<a href="/create">
+    <button class="btn-create, btn" id="btn-create">Create a new Playlist</button>
+</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Artist</th>
+        <th>Album Titel</th>
+        <th>Tracks</th>
+        <th>Track Duration</th>
+        <th>Release Year</th>
+        <th>Record Label</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="playlist: ${playlists}">
+        <td th:text="${playlist.id}"/>
+        <td th:text="${playlist.artist}"/>
+        <td th:text="${playlist.album_titel}"/>
+        <td th:text="${playlist.tracks}"/>
+        <td th:text="${playlist.track_duration}"/>
+        <td th:text="${playlist.release_year}"/>
+        <td th:text="${playlist.record_label}"/>
+    <td>
+        <a th:href="@{'/viewOne/'+${playlist.id}}">
+            <button class="btn-viewOne" id="btn-viewOne">View a playlist</button>
+        </a>
+        <a th:href="@{'/deleteOne/'+${playlist.id}}">
+            <button class="btn-deleteOne" id="btn-deleteOne">Delete a playlist</button>
+        </a>
+        <a th:href="@{'/updateOne/'+${playlist.id}}">
+            <button class="btn-updateOne" id="btn-updateOne">Update a playlist</button>
+        </a>
+    </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

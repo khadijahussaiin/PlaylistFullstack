@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update playlist</h1>
+
+<form action="/updatePlaylist" method="post">
+    <input type="text" name="id" th:value="${playlist.id}">
+    <input type="text" name="artist" th:value="${playlist.artist}">
+    <input type="text" name="album_titel" th:value="${playlist.album_titel}">
+    <input type="text" name="tracks" th:value="${playlist.tracks}">
+    <input type="text" name="track_duration" th:value="${playlist.track_duration}">
+    <input type="text" name="release_year" th:value="${playlist.release_year}">
+    <input type="text" name="record_label" th:value="${playlist.record_label}">
+    <input type="submit" value="Save changes" style="background-color: #4CAF50">
+</form>
+</body>
+</html>
